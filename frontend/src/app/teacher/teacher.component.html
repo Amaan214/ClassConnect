@@ -1,0 +1,57 @@
+<h3>Add Teacher</h3>
+<form (ngSubmit)="addTeacher()" #clsForm="ngForm">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               [(ngModel)]="newTch.name" name="name">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" class="form-control" id="email"
+               [(ngModel)]="newTch.email" name="email">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="employeeId">Emp-Id</label>
+          <input type="text" class="form-control" id="employeeId"
+                 [(ngModel)]="newTch.employeeId" name="employeeId">
+        </div>
+      </div>
+
+  </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+</form>
+
+<h2> Teacher List</h2>
+<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+  <table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Employee Id</th>
+            <th>E-mail</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let t of teacherList; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{t.name}}</td>
+            <td>{{t.employeeId}}</td>
+            <td>{{t.email}}</td>
+            <td>
+              <button (click)="updateTeacher(t.id!)" class="btn btn-info">Update</button>
+              <button class="btn btn-warning" [disabled]="!t.id" (click)="confirmDelete(t.id!)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

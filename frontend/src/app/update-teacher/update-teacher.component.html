@@ -1,0 +1,30 @@
+<h3>Update Teacher</h3>
+<form (ngSubmit)="updateTeacher()" #clsForm="ngForm">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               [(ngModel)]="editTeach.name" name="name">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" class="form-control" id="email"
+               [(ngModel)]="editTeach.email" name="email">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="employeeId">Emp-Id</label>
+          <input type="text" class="form-control" id="employeeId"
+                 [(ngModel)]="editTeach.employeeId" name="employeeId">
+        </div>
+      </div>
+
+  </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+</form>

@@ -1,0 +1,54 @@
+<h3>Add Student</h3>
+<form (ngSubmit)="addStudent()" #clsForm="ngForm">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="newStd.name" name="name">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" id="email" [(ngModel)]="newStd.email" name="email">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="rollNumber">RollNum</label>
+                <input type="text" class="form-control" id="rollNumber" [(ngModel)]="newStd.rollNumber"
+                    name="rollNumber">
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>
+
+<h2> Student List List</h2>
+<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>E-mail</th>
+                <th>Roll Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of stdList; let i = index">
+                <td>{{i + 1}}</td>
+                <td>{{s.name}}</td>
+                <td>{{s.email}}</td>
+                <td>{{s.rollNumber}}</td>
+                <td>
+                    <button (click)="updateStudent(s.id!)" class="btn btn-info">Update</button>
+                    <button class="btn btn-warning" [disabled]="!s.id" (click)="confirmDelete(s.id!)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

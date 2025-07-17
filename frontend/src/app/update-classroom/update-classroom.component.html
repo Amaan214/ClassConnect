@@ -1,0 +1,20 @@
+<h3>Update classroom</h3>
+<form (ngSubmit)="updClassroom()" #clsForm="ngForm">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="grade">Grade</label>
+        <input type="text" class="form-control" id="grade"
+               [(ngModel)]="editcls.grade" name="grade">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="section">Section</label>
+        <input type="text" class="form-control" id="section"
+               [(ngModel)]="editcls.section" name="section">
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+</form>

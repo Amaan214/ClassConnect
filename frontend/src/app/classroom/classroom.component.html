@@ -1,0 +1,48 @@
+<h3>Add classroom</h3>
+<form (ngSubmit)="addClassroom()" #clsForm="ngForm">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="grade">Grade</label>
+        <input type="text" class="form-control" id="grade"
+               [(ngModel)]="newCls.grade" name="grade">
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="section">Section</label>
+        <input type="text" class="form-control" id="section"
+               [(ngModel)]="newCls.section" name="section">
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-success" type="submit">Submit</button>
+</form>
+
+<h2 >Classroom List</h2>
+<div style="max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;">
+  <table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Grade</th>
+            <th>Section</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let c of classroom; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{c.grade}}</td>
+            <td>{{c.section}}</td>
+            <td>
+              <!-- c.id! tells the angular that my id will never be null and it implemented because the id in classroom.ts is optional(?) 
+               and [disabled]="!c.id" tells the button to be disabled when id is 0, null or undefined -->
+              <button (click)="updateClassroom(c.id!)" class="btn btn-info">Update</button>
+              <button class="btn btn-warning" [disabled]="!c.id" (click)="confirmDelete(c.id!)">Delete</button>
+              <button class="btn btn-primary" [disabled]="!c.id" (click)="showDetails(c.id!)">Details</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,25 @@
+<!-- app.component.html or your main layout file -->
+<div class="d-flex flex-column min-vh-100">
+    <!-- Sidebar -->
+    <nav class="sidebar d-flex flex-column flex-shrink-0 p-3"
+        style="width: 220px; background-color:burlywood; position: fixed; top: 0; left: 0; height: 100vh;">
+        <h3 class="text-center mb-4" style="font-weight: bold;">{{title}}</h3>
+        <ul class="nav nav-pills flex-sm-column mb-auto">
+            <li class="nav-item mb-2">
+                <a routerLink="/admin-dashboard" routerLinkActive="active" class="nav-link"
+                style="font-weight: bold; color: rgb(123, 58, 11);">Admin</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Main Content -->
+    <div class="flex-grow-1 d-flex flex-column" style="margin-left: 230px;">
+        <div class="container flex-grow-1 py-5 d-flex flex-column align-items-center justify-content-center">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    <footer class="footer py-3 mt-4" style="background-color: rgb(202, 169, 129); font-weight: bolder;">
+        <div class="container text-center">
+            <span>All rights reserved 2025</span>
+        </div>
+    </footer>
+</div>

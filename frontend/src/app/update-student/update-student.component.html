@@ -1,0 +1,27 @@
+<h3>Update Student</h3>
+<form (ngSubmit)="updateStudent()" #clsForm="ngForm">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" [(ngModel)]="editStd.name" name="name">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="text" class="form-control" id="email" [(ngModel)]="editStd.email" name="email">
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="rollNumber">RollNum</label>
+                <input type="text" class="form-control" id="rollNumber" [(ngModel)]="editStd.rollNumber"
+                    name="rollNumber">
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success" type="submit">Submit</button>
+</form>

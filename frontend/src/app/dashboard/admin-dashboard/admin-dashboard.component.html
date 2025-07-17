@@ -1,0 +1,24 @@
+<nav class="sidebar d-flex flex-column flex-shrink-0 p-3"
+    style="width: 220px; background-color:burlywood; position: fixed; top: 0; left: 0; height: 100vh;">
+    <ul class="nav nav-pills flex-sm-column mb-auto">
+        <li class="nav-item">
+            <a routerLink="/classroom" routerLinkActive="active" class="nav-link"
+                style="font-weight: bold; color: rgb(123, 58, 11);">Classroom</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/student" routerLinkActive="active" class="nav-link"
+                style="font-weight: bold; color: rgb(123, 58, 11);">Student</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/teacher" routerLinkActive="active" class="nav-link"
+                style="font-weight: bold; color: rgb(123, 58, 11);">Teacher</a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/subject" routerLinkActive="active" class="nav-link"
+                style="font-weight: bold; color: rgb(123, 58, 11);">Subject</a>
+        </li>
+    </ul>
+</nav>
+<div class="main-content" style="margin-left: 220px; padding: 20px;">
+    <router-outlet></router-outlet>
+</div>
